@@ -12,21 +12,38 @@
  text-align: ;
 }
 >
-<input id="abilityScore" type="number" placeholder="Ability Score" />
-<input id="debuffDays" type="number" placeholder="Days Studying" />
-<select id="buff">
-  <option value="0"></option>
-  <option id="Incense" value="5">Incense of Clear Thought</option>
-  <option id="Mentor" value="10">Mentor</option>
-</select>
-<input id="incenseDays" type="number" placeholder="Days Studying with Incense" />
-<input id="mentorDays" type="number" placeholder="Days with Mentor" />
-<output id="totalDays"></output>
 <label for="skill">Skill progress:</label>
 <progress id="skill" max="100" value="">
 </progress>
+<br>
+<select id="incenseDays"> 
+  <option value="0"> </option>
+  <option value="5">IoCT</option>
+</select>
+<select id="mentorDays"> 
+  <option value="0"> </option>
+  <option value="10">Mentor</option>
+</select>
+<select id="uniDays"> 
+  <option value="0"> </option>
+  <option value="15">University</option>
+</select>
+<br>
+<input id="abilityScore" type="number" placeholder="Ability Score" />
+<br>
+<input id="daysAlone" type="number" placeholder="Days Studying Alone" />
+<input id="daysIncense" type="number" placeholder="Days Studying with Incense" />
+<input id="daysMentor" type="number" placeholder="Days with Mentor" />
+<input id="daysUni" type="number" placeholder="Days with University" />
+<output id="totalDays"></output>
 <output id="percentComplete"></output>
-Incense Cost <output id="costIncense"></output> gp
+<br>
+ | 
+Incense of Clear Thought Cost <output id="costIncense"></output> gp
+ | 
 Mentor Cost <output id="costMentor"></output> gp
+ | 
+University Cost <output id="costUni"></output> gp
+ | 
 </body>
 </html>
