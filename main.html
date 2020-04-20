@@ -12,6 +12,21 @@
  text-align: ;
 }
 >
-
+<input id="abilityScore" type="number" placeholder="Ability Score" />
+<input id="debuffDays" type="number" placeholder="Days Studying" />
+<select id="buff">
+  <option value="0"></option>
+  <option id="Incense" value="5">Incense of Clear Thought</option>
+  <option id="Mentor" value="10">Mentor</option>
+</select>
+<input id="incenseDays" type="number" placeholder="Days Studying with Incense" />
+<input id="mentorDays" type="number" placeholder="Days with Mentor" />
+<output id="totalDays"></output>
+<label for="skill">Skill progress:</label>
+<progress id="skill" max="100" value="">
+</progress>
+<output id="percentComplete"></output>
+Incense Cost <output id="costIncense"></output> gp
+Mentor Cost <output id="costMentor"></output> gp
 </body>
 </html>
