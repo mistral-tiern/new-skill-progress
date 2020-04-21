@@ -5,11 +5,16 @@
 <link rel="stylesheet" href="main.css">
 <script>
 function logic() {
-  //console.clear();
+  console.clear();
+  console.log("starting");
   var formula1 = 6000 / 8;
   var formula2 = +abilityScore.value + +incenseDays.value;
   var formula3 = +abilityScore.value + +mentorDays.value;
   var formula4 = +abilityScore.value + +uniDays.value;
+  var formula5 = +daysIncense.value * 50;
+  var formula6 = +daysMentor.value * 5;
+  var formula7 = +daysUni.value * 8;
+  var formula8 = formula5 + formula6 + formula7;
   var formulaD = formula1 / +abilityScore.value;
   var formulaE = formula1 / formula2;
   var formulaF = formula1 / formula3;
@@ -22,7 +27,8 @@ function logic() {
   var formulaP = +daysMentor.value * formulaO;
   var formulaQ = 1 / formulaG;
   var formulaR = +daysUni.value * formulaQ;
-  var formulaS = (+daysAlone.value + +daysIncense.value + +daysMentor.value + +daysUni.value);
+  var formulaS =
+    +daysAlone.value + +daysIncense.value + +daysMentor.value + +daysUni.value;
   var formulaT = formulaJ + formulaM + formulaP + formulaR;
   //console.log(formula1);
   //console.log(formula2);
@@ -41,35 +47,41 @@ function logic() {
   //console.log(formulaQ);
   if (abilityScore.value == "") {
     percentComplete.value = "";
+    skill.style.width = "0%";
   } else {
-    skill.value = 100 * formulaT;
+    skill.style.width = Math.min((100 * formulaT),100) + "%";
     percentComplete.value = `${(formulaT * 100).toFixed()}%`;
-    {
-      
-      if (formulaS > 0) {
-       daysTotal.display = "none";
-      } else {
-        daysTotal.value=(formulaS);
-      }
-      
-    }
-    {
-      if (incenseDays.value == "") {
-        costIncense.value = "0";
-      } else {
-        costIncense.value = 50 * +daysIncense.value;
-      }
-      if (mentorDays.value == "") {
-        costMentor.value = "0";
-      } else {
-        costMentor.value = 5 * +daysMentor.value;
-      if (uniDays.value == "") {
-        costUni.value = "0";
-      } else {
-        costUni.value = 55 * +daysUni.value;
-      }
-      }
-    }
+  }
+  if (formulaS > 0) {
+    console.log(formulaS, "true");
+    daysTotal.style.display = "";
+    daysTotal.value = formulaS;
+  } else {
+    daysTotal.value = "0";
+    console.log(formulaS, "else");
+  }
+  if (incenseDays.value == "") {
+    costIncense.value = "0";
+  } else {
+    costIncense.value = formula5;
+  }
+  if (mentorDays.value == "") {
+    costMentor.value = "0";
+  } else {
+    costMentor.value = formula6;
+  }
+  if (uniDays.value == "") {
+    costUni.value = "0";
+  } else {
+    costUni.value = formula7;
+  }
+  if (formula8 > 0) {
+    console.log(formula8, "true");
+    costTotal.style.display = "";
+    costTotal.value = formula8;
+  } else {
+    costTotal.value = "0";
+    console.log(formula8, "else");
   }
 }
 setInterval(logic, 1000);
@@ -77,43 +89,46 @@ logic();
  </script>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-<div class="h1">
+<div class="h1" style="width:50%">
   <label for="skill">Skill Progress</label>
-  <progress id="skill" max="100" value="">
-  </progress>
-</div>
-<div class="p">
-  
-  <output="daysTotal"></output>
-  
-  <select id="incenseDays">
-  <option value="0"> </option>
-  <option value="5">IoCT</option>
-</select>
-<select id="mentorDays">
-  <option value="0"> </option>
-  <option value="10">Mentor</option>
-</select>
-<select id="uniDays">
-  <option value="0"> </option>
-  <option value="15">University</option>
-</select>
-<br>
-<input id="abilityScore" type="number" placeholder="Ability Score" />
-<br>
-<input id="daysAlone" type="number" placeholder="Days Studying Alone" />
-<input id="daysIncense" type="number" placeholder="Days Studying with Incense" />
-<input id="daysMentor" type="number" placeholder="Days with Mentor" />
-<input id="daysUni" type="number" placeholder="Days with University" />
-<output id="percentComplete"></output>
-  <br>
-  |
-  Incense of Clear Thought Cost <output id="costIncense"></output> gp
-  |
-  Mentor Cost <output id="costMentor"></output> gp
-  |
-  University Cost <output id="costUni"></output> gp
-  |
-</div>
+  </div>
+  <div class="progress">
+    <div id="skill" class="bar" style="width:50%">
+      <center><output id="percentComplete"></output></center>
+    </div>
+  </div>
+  <div class="p">
+    <select id="incenseDays">
+      <option value="0"> </option>
+      <option value="10">IoCT</option>
+    </select>
+    <select id="mentorDays">
+      <option value="0"> </option>
+      <option value="2">Mentor</option>
+    </select>
+    <select id="uniDays">
+      <option value="0"> </option>
+      <option value="5">University</option>
+    </select>
+    <br>
+    <input id="abilityScore" type="number" min="4" placeholder="Ability Score" />
+    <br>
+    <input id="daysAlone" type="number" min="0" placeholder="Days Studying Alone" />
+    <input id="daysIncense" type="number" min="0" placeholder="Days Studying with Incense" />
+    <input id="daysMentor" type="number" min="0" placeholder="Days Studying with Mentor" />
+    <input id="daysUni" type="number" min="0" placeholder="Days Studying with University" />
+    <br>
+    Days Total: <output id="daysTotal"></output>
+    |
+    Cost Total: <output id="costTotal"></output> gp
+    <br>
+    |
+    Incense of Clear Thought Cost <output id="costIncense"></output> gp
+    |
+    Mentor Cost <output id="costMentor"></output> gp
+    |
+    University Cost <output id="costUni"></output> gp
+    |
+  </div>
 </body>
 </html>
