@@ -2,20 +2,11 @@
 <meta charset="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> New Skill Progress Calculator </title>
-<link rel="stylesheet" href="">
-<body {
- background: # url('');
- color: #;
- font: px , , ;
- line-height: %;
- margin: 0 auto;
- text-align: ;
-}
->
- <script>
+<link rel="stylesheet" href="main.css">
+<script>
 function logic() {
   //console.clear();
-  var formula1 = 20000 / 8;
+  var formula1 = 6000 / 8;
   var formula2 = +abilityScore.value + +incenseDays.value;
   var formula3 = +abilityScore.value + +mentorDays.value;
   var formula4 = +abilityScore.value + +uniDays.value;
@@ -54,11 +45,13 @@ function logic() {
     skill.value = 100 * formulaT;
     percentComplete.value = `${(formulaT * 100).toFixed()}%`;
     {
+      
       if (formulaS > 0) {
-        totalDays.value = "";
+       daysTotal.display = "none";
       } else {
-        totalDays.value = formulaS;
+        daysTotal.value=(formulaS);
       }
+      
     }
     {
       if (incenseDays.value == "") {
@@ -82,20 +75,26 @@ function logic() {
 setInterval(logic, 1000);
 logic();
  </script>
-
-<label for="skill">Skill progress:</label>
-<progress id="skill" max="100" value="">
-</progress>
-<br>
-<select id="incenseDays"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<div class="h1">
+  <label for="skill">Skill Progress</label>
+  <progress id="skill" max="100" value="">
+  </progress>
+</div>
+<div class="p">
+  
+  <output="daysTotal"></output>
+  
+  <select id="incenseDays">
   <option value="0"> </option>
   <option value="5">IoCT</option>
 </select>
-<select id="mentorDays"> 
+<select id="mentorDays">
   <option value="0"> </option>
   <option value="10">Mentor</option>
 </select>
-<select id="uniDays"> 
+<select id="uniDays">
   <option value="0"> </option>
   <option value="15">University</option>
 </select>
@@ -106,15 +105,15 @@ logic();
 <input id="daysIncense" type="number" placeholder="Days Studying with Incense" />
 <input id="daysMentor" type="number" placeholder="Days with Mentor" />
 <input id="daysUni" type="number" placeholder="Days with University" />
-<output id="totalDays"></output>
 <output id="percentComplete"></output>
-<br>
- | 
-Incense of Clear Thought Cost <output id="costIncense"></output> gp
- | 
-Mentor Cost <output id="costMentor"></output> gp
- | 
-University Cost <output id="costUni"></output> gp
- | 
+  <br>
+  |
+  Incense of Clear Thought Cost <output id="costIncense"></output> gp
+  |
+  Mentor Cost <output id="costMentor"></output> gp
+  |
+  University Cost <output id="costUni"></output> gp
+  |
+</div>
 </body>
 </html>
