@@ -1,0 +1,35 @@
+body {
+  background-color: #99cc99;
+  font-family: "Roboto", "Open Sans", sans-serif;
+}
+.h1 {
+  background-color:#cccccc;
+  display: block;
+  border:1px;
+  width:50%;
+  text-align:left;
+  font-family: "Roboto", sans-serif;
+  font-color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-size:14pt;
+}
+.p {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-weight:100;
+  font-size:12pt;
+}
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
