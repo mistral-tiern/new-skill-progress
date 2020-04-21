@@ -2,6 +2,53 @@
 <meta charset="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> New Skill Progress Calculator </title>
+<head>
+  <style>
+    body {
+  background-color: #99cc99;
+  font-family: "Roboto", "Open Sans", sans-serif;
+}
+.h1 {
+  background-color:#cccccc;
+  display: block;
+  border:1px;
+  text-align:left;
+  font-family: "Roboto", sans-serif;
+  font-color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-size:14pt;
+}
+.p {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  font-weight:100;
+  font-size:12pt;
+}
+.progress {
+  width: 300px;
+  height: 20px;
+  background-color: white;
+  box-shadow: inset -5px 5px 5px 0px #00000040;
+  border: solid 1px #ccc;
+  border-radius: 2px; 
+}
+.bar {
+  height: 100%;
+  background: linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    linear-gradient(to left, #09c, #f44);
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+  </style>
+</head>
 <link rel="stylesheet" href="main.css">
 <script>
 function logic() {
