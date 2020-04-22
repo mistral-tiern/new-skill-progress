@@ -137,53 +137,153 @@ logic();
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 <div class="h1" style="width:50%">
-  <label for="skill">Skill Progress</label>
-  </div>
-  <div class="progress">
-    <div id="skill" class="bar" style="width:50%">
-      <center><output id="percentComplete"></output></center>
-    </div>
-  </div>
-  <div class="p">
-    <select id="incenseDays">
-      <option value="0"> </option>
-      <option value="10">IoCT</option>
+    <label for="skill">Progress</label>
+</div>
+    <select id="name">
+      <option value="0">  </option>
+      <option value="1"> Abyssal </option>
+      <option value="2"> Alchemist's Supplies </option>
+      <option value="3"> Bagpipes </option>
+      <option value="4"> Battleaxe </option>
+      <option value="5"> Blowgun </option>
+      <option value="6"> Brewer's Supplies </option>
+      <option value="7"> Calligrapher's Supplies </option>
+      <option value="8"> Carpenter's Tools </option>
+      <option value="9"> Cartographer's Tools </option>
+      <option value="10"> Celestial </option>
+      <option value="11"> Climbing </option>
+      <option value="12"> Club </option>
+      <option value="13"> Cobbler's Tools </option>
+      <option value="14"> Common </option>
+      <option value="15"> Cook's Utensils </option>
+      <option value="16"> Dagger </option>
+      <option value="17"> Dart </option>
+      <option value="18"> Deep Speech </option>
+      <option value="19"> Dice Set </option>
+      <option value="20"> Disguise Kit </option>
+      <option value="21"> Draconic </option>
+      <option value="22"> Dragonchess Set </option>
+      <option value="23"> Drum </option>
+      <option value="24"> Dulcimer </option>
+      <option value="25"> Dwarvish </option>
+      <option value="26"> Elvish </option>
+      <option value="27"> Flail </option>
+      <option value="28"> Flute </option>
+      <option value="29"> Forgery Kit </option>
+      <option value="30"> Giant </option>
+      <option value="31"> Glaive </option>
+      <option value="32"> Glassblower's Tools </option>
+      <option value="33"> Gnomish </option>
+      <option value="34"> Goblin </option>
+      <option value="35"> Greataxe </option>
+      <option value="36"> Greatclub </option>
+      <option value="37"> Greatsword </option>
+      <option value="38"> Halberd </option>
+      <option value="39"> Halfling </option>
+      <option value="40"> Hand Crossbow </option>
+      <option value="41"> Handaxe </option>
+      <option value="42"> Heavy Armor </option>
+      <option value="43"> Heavy Crossbow </option>
+      <option value="44"> Herbalism Kit </option>
+      <option value="45"> Horn </option>
+      <option value="46"> Improvised Weapon </option>
+      <option value="47"> Infernal </option>
+      <option value="48"> Javelin </option>
+      <option value="49"> Jeweler's Tools </option>
+      <option value="50"> Lance </option>
+      <option value="51"> Land Vehicles </option>
+      <option value="52"> Leatherworker's Tools </option>
+      <option value="53"> Light Crossbow </option>
+      <option value="54"> Light Hammer </option>
+      <option value="55"> Longbow </option>
+      <option value="56"> Longsword </option>
+      <option value="57"> Lute </option>
+      <option value="58"> Lyre </option>
+      <option value="59"> Mace </option>
+      <option value="60"> Mason's Tools </option>
+      <option value="61"> Maul </option>
+      <option value="62"> Morningstar </option>
+      <option value="63"> Navigator's Tools </option>
+      <option value="64"> Net </option>
+      <option value="65"> Orc </option>
+      <option value="66"> Painter's Supplies </option>
+      <option value="67"> Pan Flute </option>
+      <option value="68"> Pike </option>
+      <option value="69"> Playing Card Set </option>
+      <option value="70"> Poisoner's kit </option>
+      <option value="71"> Potter's Tools </option>
+      <option value="72"> Primordial </option>
+      <option value="73"> Quarterstaff </option>
+      <option value="74"> Rapier </option>
+      <option value="75"> Scimitar </option>
+      <option value="76"> Shawm </option>
+      <option value="77"> Shortbow </option>
+      <option value="78"> Shortsword </option>
+      <option value="79"> Sickle </option>
+      <option value="80"> Sling </option>
+      <option value="81"> Smith's Tools </option>
+      <option value="82"> Spear </option>
+      <option value="83"> Swimming </option>
+      <option value="84"> Sylvan </option>
+      <option value="85"> Thieves' Tools </option>
+      <option value="86"> Three-Dragon Ante Set </option>
+      <option value="87"> Tinker's Tools </option>
+      <option value="88"> Trident </option>
+      <option value="89"> Unarmed Strike </option>
+      <option value="90"> Undercommon </option>
+      <option value="91"> Viol </option>
+      <option value="92"> War Pick </option>
+      <option value="93"> Warhammer </option>
+      <option value="94"> Water Vehicles </option>
+      <option value="95"> Weaver's Tools </option>
+      <option value="96"> Whip </option>
+      <option value="97"> Woodcarver's Tools </option>
     </select>
-    <select id="mentorDays">
-      <option value="0"> </option>
-      <option value="2">Mentor</option>
-    </select>
-    <select id="uniDays">
-      <option value="0"> </option>
-      <option value="5">University</option>
-    </select>
-    <br>
-    <input id="abilityScore" type="number" min="4" placeholder="Ability Score" />
-    <br>
-    <input id="daysAlone" type="number" min="0" placeholder="Days Studying Alone" />
-    <input id="daysIncense" type="number" min="0" placeholder="Days Studying with Incense" />
-    <input id="daysMentor" type="number" min="0" placeholder="Days Studying with Mentor" />
-    <input id="daysUni" type="number" min="0" placeholder="Days Studying with University" />
-    <br>
-    |  
-    Days Total: <output id="daysTotal"></output>
-    |
-    <br>
-     | 
-    Cost Total: <output id="costTotal"></output> gp
-     |
-    <br>
-    |
-    Incense of Clear Thought Cost <output id="costIncense"></output> gp
-    |
-    <br>
-    |
-    Mentor Cost <output id="costMentor"></output> gp
-    |
-    <br>
-    |
-    University Cost <output id="costUni"></output> gp
-    |
+<div class="progress">
+  <div id="skill" class="bar" style="width:50%">
+    <center><output id="percentComplete"></output></center>
   </div>
+</div>
+<div class="p">
+  <select id="incenseDays">
+    <option value="0"> </option>
+    <option value="10">IoCT</option>
+  </select>
+  <select id="mentorDays">
+    <option value="0"> </option>
+    <option value="2">Mentor</option>
+  </select>
+  <select id="uniDays">
+    <option value="0"> </option>
+    <option value="5">University</option>
+  </select>
+  <br>
+  <input id="abilityScore" type="number" min="4" placeholder="Ability Score" />
+  <br>
+  <input id="daysAlone" type="number" min="0" placeholder="Days Studying Alone" />
+  <input id="daysIncense" type="number" min="0" placeholder="Days Studying with Incense" />
+  <input id="daysMentor" type="number" min="0" placeholder="Days Studying with Mentor" />
+  <input id="daysUni" type="number" min="0" placeholder="Days Studying with University" />
+  <br>
+  |
+  Days Total: <output id="daysTotal"></output>
+  |
+  <br>
+  |
+  Cost Total: <output id="costTotal"></output> gp
+  |
+  <br>
+  |
+  Incense of Clear Thought Cost <output id="costIncense"></output> gp
+  |
+  <br>
+  |
+  Mentor Cost <output id="costMentor"></output> gp
+  |
+  <br>
+  |
+  University Cost <output id="costUni"></output> gp
+  |
+</div>
 </body>
 </html>
